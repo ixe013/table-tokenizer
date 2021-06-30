@@ -8,7 +8,7 @@ import (
 //*/
 
 func tokenize(sensitive string, table tables.Table) string {
-    left := tables.TableEntry(42)
+    left := tables.TableEntry(2)
     right := tables.TableEntry(0)
 
     right += table.Lookup(left)
@@ -17,7 +17,7 @@ func tokenize(sensitive string, table tables.Table) string {
 }
 
 func main() {
-    forward := tables.InMemoryTable{}
+    forward := tables.GenerateInMemoryTable(10)
 
     tokenize("asdf", forward)
 
